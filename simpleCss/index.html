@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simpleCssTest</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #181818;
+    }
+
+    div {
+        width: 200px;
+        height: 120px;
+        box-shadow: 16px 14px 20px #0000008c;
+        border-radius: 10px;
+        background: #181818;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    div::before {
+        content: "";
+        background: conic-gradient(#ff0052 20deg, transparent 100deg);
+        width: 150%;
+        height: 150%;
+        position: absolute;
+        animation: animate 1.5s linear infinite;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: rotate(0deg)
+        } 100% {
+            transform: rotate(-360deg)
+        }
+    }
+
+    div::after {
+        content: "Animation";
+        width: 194px;
+        height: 114px;
+        background: #101010;
+        position: absolute;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: larger;
+        color: #ff0052;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 4px;
+        box-shadow: inset 20px 20px 20px #0000008c;
+    }
+</style>
+<body>
+    <div></div>
+</body>
+</html>
